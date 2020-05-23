@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    
+    margin: 100px;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 28px; 
+    color: #ED1C16;
+    border: solid #000000 1px;
+    display: inline-block;
+}
+
+.texto-corrido {
+    text-align: justify;
+    background-color: #f0f0f0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #292929;
+    padding: 10px;
+    border-left-width: 10px;
+}
+
+.texto-intro {
+    text-align: center;
+    font-style: italic;
+
+}
+
