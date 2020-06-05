@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Me. Wellington Aparecido Della Mura</title>
+    <link rel="stylesheet" href="css/main.css" id="mainStyle">
+    <link rel="stylesheet" href="css/nav.css">
+    <script>
+        const images = [
+            'images/im1.jpg',
+            'images/im2.jpg',
+            'images/im3.jpg',
+        ];
+        let current = 0;
+
+        function change(x){
+            var imgBanner = document.getElementById('imgBanner');
+            current = current + x;
+            if (current<0)
+                current = images.length-1;
+            if (current > images.length-1){
+                current = 0;
+            }
+            imgBanner.src = images[current];
+        }
+
+        var size = 20;
+        function darkMode(){
+            document.getElementById('mainStyle').href = 'css/main-dark.css';
+        }
+
+        function lightMode(){
+            document.getElementById('mainStyle').href = 'css/main.css';
+        }
+
+        function incFont(x){
+            size +=x;
+            document.body.style.fontSize = size+"px";
+        }
+    </script>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="">Início</a></li>
+            <li><a href="">Github</a></li>
+            <li><a href="">Lattes</a></li>
+            <li><a href="">Linkedin</a></li>
+            <li><a href="">CCT/UENP</a></li>
+        </ul>
+    </nav>
+    
+    <button onclick="darkMode()" >Escuro</button>
+    <button onclick="lightMode()">Claro</button>
+    <button onclick="incFont(1)" >INC</button>
+    <button onclick="incFont(-1)">DEC</button>
+    <main id="foo">
+        <h1>Prof. Me. Wellington Della Mura</h1>
+        <section>
+            <h2>Sobre mim</h2>
+            <p>
+                Bacharel em Sistemas de Informação e Licenciado em Computação pela Universidade Estadual do Norte do Paraná (2007), 
+                Especialista em Tecnologia Java pela Universidade Tecnológica Federal do Paraná (2009) e Mestre em Ciência da 
+                Computação pela Universidade Estadual de Londrina (2016). Atualmente é professor colaborador no Centro de Ciências 
+                Tecnológicas da Universidade Estadual do Norte do Paraná. Tem experiência nas áreas de Sistemas de Informação e 
+                Ciência da Computação, com ênfase em Linguagem Formais e Autômatos, Teoria da Computação e Desenvolvimento de 
+                Sistemas, atuando principalmente nos seguintes temas: Verificação formal, Teste baseado em modelos e Contratos Eletrônicos. 
+            </p>
+        </section>
+        <section>
+            <h2>Áreas de Interesse</h2>
+
+             <ul>
+                <li>Métodos Formais, Contratos Eletrônicos e Blockchain</li>
+                <li>Desenvolvimento Web e Móvel</li>
+                <li>Compiladores e suas aplicações</li>
+                <li>Redes e servidores Linux e Windows</li>
+             </ul>
+        </section>
+        <section>
+            <h2>Experiência Profissional</h2>
+             <ul>
+                <li>FFALM/UENP (2009-2012)</li>
+                <li><a href="">UENP</a> (2013-Atual)</li>
+                <li>UTFPR (2010-2010)</li>
+                <li>NTI/UENP (2010-2013)</li>
+                <li>Forlogic Software (2008-2010)</li>
+             </ul>
+        </section>
+        <section>
+            <h2>Formação</h2>
+             <ul>
+                <li>Sistemas de Informação e Licenciatura em Computação (FFALM/UENP - 2007)</li>
+                <li>Especialização em Tecnologia Java (UTFPR - 2019)</li>
+                <li>Mestrado em Ciência da Computação (UEL - 2016)</li>
+             </ul>
+        </section>
+
+        <div>
+            <img src="images/im1.jpg" alt="" style="width: 500px;" id="imgBanner">
+            <button onclick="change(-1)">prev</button>
+            <button onclick="change(+1)">next</button>
+        </div>
+
+        <section>
+            <h2>Contato</h2>
+             <ul>
+                <li>wellington@uenp.edu.br</li>
+                <li>della.mura@gmail.com</li>
+                <li>@wellingtondellamura</li>
+             </ul>
+        </section>
+
+    </main>
+</body>
+</html>

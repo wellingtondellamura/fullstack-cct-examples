@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        .title {
+            font-family: 'Indie Flower', cursive;
+            font-size: 40px;
+        }
+        .frame {
+            border: solid gray 2px;
+            width: 500px;
+            height: 400px;
+            margin: 10px;
+        }
+        .photo {
+            width: 100%;
+        }
+    </style>
+    <script>
+        const images = [ 'images/desk.jpg', 'images/macbook.jpg', 'images/notebook.jpg'];
+        let current = 0;
+
+        function changePhoto(x) {
+            current = current + x;
+            if (current > 2) 
+                current = 0;
+            if (current < 0)
+                current = 2;
+            let imgPhoto = document.getElementById('imgPhoto');
+            imgPhoto.src = images[current];
+        }
+
+    </script>
+</head>
+<body>
+    <h1 class="title">Minhas fotos</h1>
+    <div>
+        <div class="frame">
+            
+            <img class="photo" id="imgPhoto" src="images/desk.jpg">
+        </div>
+
+        <button onclick="changePhoto(-1)">Anterior</button>
+        <button onclick="changePhoto(1)">Próximo</button>
+    </div>
+</body>
+</html>
