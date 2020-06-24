@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('aula', 'AulaController@index');
-Route::get('class', 'AulaController@index');
-Route::post('aula', 'AulaController@novaAula');
-
-Route::post('debt', 'DebtController@create');
-Route::get('debt', 'DebtController@readAll');
-Route::delete('debt/{id}', 'DebtController@delete');
-Route::put('debt/{id}', 'DebtController@update');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
