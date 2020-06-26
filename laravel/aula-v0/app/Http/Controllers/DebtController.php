@@ -13,12 +13,6 @@ class DebtController extends Controller
         return $this->sendData($debts);
     }
 
-    public function readAllByCPF($cpf)
-    {
-        $debts = Debt::where('cpf', $cpf)->get();
-        return $this->sendData($debts);
-    }
-
     public function create(Request $request)
     {
        $data = $request->all();
@@ -32,7 +26,7 @@ class DebtController extends Controller
 
     public function update($id, Request $request)
     {
-
+        
     }
 
     public function delete($id)
